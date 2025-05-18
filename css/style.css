@@ -11,6 +11,8 @@ body{
 
 :root {
   --blanco: #ffffff;
+  --color-letras-blanco: #ffff;
+  --color-letras-subtitulo: #e7e7e7;
   --background-color: #e8e8e8;
   --color-principal: #2f3240;
   --color-secundario: #2cdcd6;
@@ -243,12 +245,13 @@ a{
 }
  
  .card { 
-  background-color: #033f5f;
+  background-color: var(--color-principal);
+  /*background-color: #033f5f;*/
   max-width: 350px;
   width: 100%;
   border-radius: 20px;
-  border: 3px solid var(--color-secundario);
-  color: var(--blanco); 
+  border: 3px solid var(--blanco);
+  color: var(--color-letras-blanco); 
   padding: 1rem; 
   margin: 0 auto; 
   margin-bottom: 2rem;
@@ -269,11 +272,29 @@ a{
   border-radius: 5px;
 }
 
-.card p{
-  color: var(--blanco);
+.card h1{
+  color: var(--color-letras-blanco);
   font-size: 1.2rem;
-  padding: 2rem;
+  padding: 1rem;
   text-align: center;
+}
+
+.card h2{
+  color: var(--color-letras-blanco);
+  font-size: 1rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.card p{
+  color: var(--color-letras-subtitulo);
+  font-size: 1rem;
+  padding: .5rem;
+  text-align: center;
+}
+
+.card span{
+  color: var(--color-secundario);
 }
 
 
