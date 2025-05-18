@@ -1,3 +1,10 @@
+// Preloader
+$(window).on('load', function() {
+	$('#preloader').delay(100).fadeOut('slow',function(){$(this).remove();});
+  });
+
+
+$(document).ready(function(){
 const navToggler = document.querySelector(".nav-toggler");
 navToggler.addEventListener("click", navToggle);
 
@@ -11,7 +18,7 @@ function navToggle() {
    else{
        nav.removeAttribute("style");
    }
-} 
+}}); 
 
 
 
