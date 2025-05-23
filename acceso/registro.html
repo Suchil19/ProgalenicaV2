@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Aviso de Privacidad | Progalenica</title>
+  <title>Registro | Progalenica</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poetsen+One&family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
   <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="./css/mi-espacio.css">
+  <link rel="stylesheet" href="./css/registro.css">
   
 </head>
 <body ondragstart="return false" onselectstart="return false" oncontextmenu="return false">
@@ -28,9 +28,7 @@
             <nav class="nav">
                <ul>
                   <li><a href="../index.html" class="active">Inicio</a></li>
-                  <li><a href="#">Contacto</a></li>
-                  <li><a href="#">Productos</a></li>
-                  <li><a href="#">Ingresa</a></li>
+                  <li><a href="#">Ingresa | Registrate</a></li>
                   <li><a href="#">Perfil</a></li>
                </ul>
             </nav>
@@ -45,130 +43,61 @@
 
 <section id="hero">
   <div class="hero-text">
-      <h1>Cliente</h1>
-      <p>Aviso de Privacidad</p>
+      <h1>Progalenica</h1>
+      <p>Identificate | Registro</p>
   </div>
 </section>
 
 
 
 
-
-
-<main>
-    <div class="cards">
-      <div class="card-single">
-        <div>
-          <h1>50</h1>
-          <span>Customers</span>
-        </div>
-        <div>
-          <span class="fas fa-users"></span>
-        </div>
-      </div>
-      <div class="card-single">
-        <div>
-          <h1>12</h1>
-          <span>Projects</span>
-        </div>
-        <div>
-          <span class="fas fa-clipboard-list"></span>
-        </div>
-      </div>
-      <div class="card-single">
-        <div>
-          <h1>15</h1>
-          <span>Orders</span>
-        </div>
-        <div>
-          <span class="fas fa-shopping-cart"></span>
-        </div>
-      </div>
-      <div class="card-single">
-        <div>
-          <h1>$50K</h1>
-          <span>Income</span>
-        </div>
-        <div>
-          <span class="fas fa-wallet"></span>
-        </div>
-      </div>
-
+<div class="wrapper">
+  <div class="title-text">
+    <div class="title login">Inicia Sesión</div>
+    <div class="title signup">Registrate</div>
+  </div>
+  <div class="form-container">
+    <div class="slide-controls">
+      <input type="radio" name="slide" id="login" checked>
+      <input type="radio" name="slide" id="signup">
+      <label for="login" class="slide login">Inicia sesión</label>
+      <label for="signup" class="slide signup">Registrate</label>
+      <div class="slider-tab"></div>
     </div>
-
-    <div class="recent-grid">
-      <div class="projects">
-        <div class="card">
-          <div class="card-header">
-            <h2>Recent Projects</h2>
-            <button>See all <span class="fas fa-arrow-right"></span> </button>
-          </div>
-          <div class="card-body">
-            <div class="table-responsive">
-              <table width="100%">
-              <thead>
-                <tr>
-                  <td>Project Title</td>
-                  <td>Department</td>
-                  <td>Status</td>
-
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Website</td>
-                  <td>Frontend</td>
-                  <td>
-                    <span class="status purple"></span>
-                    Review
-                  </td>
-                </tr>
-                <tr>
-                  <td>Website</td>
-                  <td>Frontend</td>
-                  <td>
-                    <span class="status orange"></span>
-                    Pending
-                  </td>
-                </tr>
-                <tr>
-                  <td>Website</td>
-                  <td>Frontend</td>
-                  <td>
-                    <span class="status pink"></span>
-                    In Progress
-                  </td>
-                </tr>
-                <tr>
-                  <td>Website</td>
-                  <td>Frontend</td>
-                  <td>
-                    <span class="status purple"></span>
-                    Review
-                  </td>
-                </tr>
-                <tr>
-                  <td>Website</td>
-                  <td>Frontend</td>
-                  <td>
-                    <span class="status pink"></span>
-                    In Progress
-                  </td>
-                </tr>
-              </tbody>
-
-            </table>
-            </div>
-          </div>
-
+    <div class="form-inner">
+      <form action="#" class="login">
+        <div class="field">
+          <input type="text" placeholder="Dirección de correo" required>
         </div>
+        <div class="field">
+          <input type="password" placeholder="Contraseña" required>
+        </div>
+        <div class="pass-link"><a href="#">Olvidaste la contraseña?</a></div>
+        <div class="field btn">
+          <div class="btn-layer"></div>
+          <input type="submit" value="Login">
+        </div>
+        <div class="signup-link">No eres miembro? <a href="">Registrate Ahora</a></div>
+      </form>
+      <form action="#" class="signup">
+        <div class="field">
+          <input type="text" placeholder="Dirección de correo" required>
+        </div>
+        <div class="field">
+          <input type="password" placeholder="Contraseña" required>
+        </div>
+        <div class="field">
+          <input type="password" placeholder="Confirma la contraseña" required>
+        </div>
+        <div class="field btn">
+          <div class="btn-layer"></div>
+          <input type="submit" value="Signup">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 
-      </div>
- 
-      
-    </div>  
-
-  </main>
 
 
 
@@ -223,6 +152,7 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
   <!--script src="../js/buscador.js"></script-->
 <script src="../js/main.js"></script>
+<script src="./js/registro.js"></script>
 
 </body>
 </html>
