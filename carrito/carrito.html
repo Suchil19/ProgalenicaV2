@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras Animado</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="carrito">
+        🛒 Carrito: <span id="contador">0</span>
+    </div>
+
+    <div class="producto">
+        <p>Producto 1 - $100</p>
+        <button onclick="agregarAlCarrito('Producto 1', 100)">Agregar al carrito</button>
+    </div>
+    <div class="producto">
+        <p>Producto 2 - $200</p>
+        <button onclick="agregarAlCarrito('Producto 2', 200)">Agregar al carrito</button>
+    </div>
+    <div class="producto">
+        <p>Producto 3 - $50</p>
+        <button onclick="agregarAlCarrito('Producto 3', 50)">Agregar al carrito</button>
+    </div>
+
+    <h2>Total: $<span id="total">0</span></h2>
+    <button onclick="mostrarCheckout()">Finalizar Compra</button>
+
+    <div id="checkout-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="cerrarCheckout()">&times;</span>
+            <h2>Resumen de Compra</h2>
+            <ul id="lista-productos"></ul>
+            <h3>Total: $<span id="checkout-total">0</span></h3>
+            <button onclick="confirmarCompra()">Confirmar Compra</button>
+        </div>
+    </div>
+
+
+
+
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+}
+
+.producto {
+    margin: 10px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo del carrito con animación */
+.carrito {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #ffcc00;
+    padding: 10px;
+    border-radius: 50px;
+    font-size: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.agregado {
+    transform: scale(1.2);
+}
+
+/* Estilos del modal */
+.modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.close {
+    color: red;
+    float: right;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+</style>
+
+
+
+
+    <script>
+        let total = 0;
+let carrito = [];
+let contadorProductos = 0;
+
+function agregarAlCarrito(nombre, precio) {
+    carrito.push({ nombre, precio });
+    total += precio;
+    contadorProductos++;
+
+    document.getElementById("total").textContent = total;
+    document.getElementById("contador").textContent = contadorProductos;
+
+    // Animación en el carrito
+    let carritoElemento = document.querySelector(".carrito");
+    carritoElemento.classList.add("agregado");
+    setTimeout(() => carritoElemento.classList.remove("agregado"), 300);
+}
+
+function mostrarCheckout() {
+    let listaProductos = document.getElementById("lista-productos");
+    listaProductos.innerHTML = "";
+
+    carrito.forEach((producto, index) => {
+        let item = document.createElement("li");
+        item.innerHTML = `${producto.nombre} - $${producto.precio} 
+                          <button onclick="eliminarProducto(${index})">❌</button>`;
+        listaProductos.appendChild(item);
+    });
+
+    document.getElementById("checkout-total").textContent = total;
+    document.getElementById("checkout-modal").style.display = "block";
+}
+
+function eliminarProducto(index) {
+    total -= carrito[index].precio;
+    carrito.splice(index, 1);
+    contadorProductos--;
+
+    document.getElementById("total").textContent = total;
+    document.getElementById("contador").textContent = contadorProductos;
+
+    mostrarCheckout();
+}
+
+function cerrarCheckout() {
+    document.getElementById("checkout-modal").style.display = "none";
+}
+
+function confirmarCompra() {
+    alert("Compra realizada con éxito!");
+    carrito = [];
+    total = 0;
+    contadorProductos = 0;
+    document.getElementById("total").textContent = total;
+    document.getElementById("contador").textContent = contadorProductos;
+    cerrarCheckout();
+}
+
+    </script>
+</body>
+</html>

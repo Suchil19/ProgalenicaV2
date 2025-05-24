@@ -275,7 +275,7 @@ a{
 }
 
 .tarjetas__productos:hover { 
-  transform: scale(1.1);
+  transform: scale(1.05);
   transition: ease-in .3s;
 }
 
@@ -493,3 +493,4 @@ main {
       margin: 10px 0 0 0;
     }
   }
+
