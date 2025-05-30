@@ -249,6 +249,8 @@ a{
   border-radius: 70px;
   border: 3px solid var(--color-secundario-2);
  }
+
+
  .grid__container {
   max-width: 780px;
   margin: 0 auto;
@@ -330,6 +332,72 @@ a{
 .tarjetas__productos span{
   color: var(--color-secundario);
 }
+
+
+
+
+.filtrar__laboratorios {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Permite que los botones se ajusten */
+  gap: 10px;
+  padding: 2rem;
+  margin-bottom: 20px;
+}
+
+.filtrar__laboratorios button {
+  padding: 15px 30px;
+  cursor: pointer;
+  border: none;
+  background-color: var(--color-principal);;
+  background-size: cover;
+  background-position: center;
+  color: var(--blanco);
+  font-weight: bold;
+  border-radius: 8px;
+  width: 120px;
+  height: 50px;
+}
+
+/* Imágenes de fondo personalizadas 
+.filtrar__laboratorios button:nth-child(1) {
+  background-image: url("../img/logo/logo-progalenica-blanco.png") center no-repeat;
+  background-size: cover;
+}
+
+.filtrar__laboratorios button:nth-child(2) {
+  background-image: url('./img/bg-laboratorioA.jpg');
+}
+
+.filtrar__laboratorios button:nth-child(3) {
+  background-image: url('./img/bg-laboratorioB.jpg');
+}
+
+.filtrar__laboratorios button:nth-child(4) {
+  background-image: url('./img/bg-laboratorioC.jpg');
+}
+*/
+
+/*** Filtrar Productos ***/
+.filtrar__laboratorios {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 20px;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.filtrar__laboratorios button {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.tarjetas__productos {
+  display: none;
+}
+
+
+
 
 
 

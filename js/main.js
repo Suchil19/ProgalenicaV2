@@ -20,3 +20,20 @@ function navToggle() {
    }
 }}); 
 
+
+// Filtrar
+
+function filterProducts(laboratorio) {
+  const cards = document.querySelectorAll('.tarjetas__productos');
+  cards.forEach(card => {
+      card.style.display = (laboratorio === 'all' || card.getAttribute('data-lab') === laboratorio) ? 'block' : 'none';
+  });
+}
+
+// Muestra todos los productos al cargar la página
+document.addEventListener("DOMContentLoaded", function() {
+  filterProducts('all');
+});
+
+
+

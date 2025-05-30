@@ -48,7 +48,7 @@
 </section>
 
 
-
+<!--Buscador -->
 
 <div class="buscador">
   <h1>Busca tus productos</h1>
@@ -56,17 +56,25 @@
 </div>
 
 
+<div class="filtrar__laboratorios">
+  <button onclick="filterProducts('all')">Todos</button>
+  <button onclick="filterProducts('Laboratorio A')">Laboratorio A</button>
+  <button onclick="filterProducts('Laboratorio B')">Laboratorio B</button>
+  <button onclick="filterProducts('Laboratorio C')">Laboratorio C</button>
+</div>
+<!--Tarjetas-->
+
 <div class="grid__container">
 
-  <div class="tarjetas__productos" data-id="Apthon">
-    <img src="./img/productos/apthon.png" alt="apthon">
+  <div class="tarjetas__productos categoria1" data-id="Apthon" data-lab="Laboratorio A">
+    <img src="./img/productos/apthon.png" alt="Apthob">
     <h1>Apthon®</h1>
     <p>Cinacalcet 30 mg | 30 TABS</p>
     <h3>
       Precio por caja: $3,654.00</h3>
   </div>
 
-  <div class="tarjetas__productos" data-id="Matinev">
+  <div class="tarjetas__productos" data-id="Matinev" data-lab="Laboratorio B">
     <img src="./img/productos/matinev.png" alt="matinev">
     <h1>Matinev®</h1>
     <p>MEMANTINA 10 mg | 28 Tabletas</p>
@@ -75,7 +83,7 @@
       
   </div>
 
-  <div class="tarjetas__productos" data-id="Matinev">
+  <div class="tarjetas__productos" data-id="Matinev" data-lab="Laboratorio A">
     <img src="./img/productos/matinev-56tabs.png" alt="matinev">
     <h1>Matinev®</h1>
     <p>MEMANTINA 10 mg | 56 Tabletas</p>
