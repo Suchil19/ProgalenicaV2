@@ -64,17 +64,41 @@
 </div>
 <!--Tarjetas-->
 
+
+
+<div class="carrito">
+  <h2>Carrito de compras</h2>
+  <ul id="lista-carrito"></ul>
+  <h3>Total General: $<span id="total-precio">0</span></h3>
+  <button id="checkout">Checkout</button>
+</div>
+
+<div class="checkout-container">
+  <h2>Resumen de compra</h2>
+  <ul id="lista-checkout"></ul>
+  <h3>Total en checkout: $<span id="checkout-total">0</span></h3>
+</div>
+
 <div class="grid__container">
 
   <!-- Laboratorio Synthon-->
 
-  <div class="tarjetas__productos" data-id="Apthon" data-lab="Synthon">
-    <img src="./img/productos/apthon.png" alt="Apthob">
-    <h1>Apthon®</h1>
-    <p>Cinacalcet 30 mg | 30 TABS</p>
-    <h3>
-      Precio por caja: $3,654.00</h3>
-  </div>
+  <div class="grid__container">
+    <!-- Laboratorio Synthon -->
+    <div class="tarjetas__productos" data-id="Apthon" data-lab="Synthon" data-precio="3654">
+        <img src="./img/productos/apthon.png" alt="Apthon">
+        <h1>Apthon®</h1>
+        <p>Cinacalcet 30 mg | 30 TABS</p>
+        <h3>Precio por unidad: $<span class="precio-unitario">3,654.00</span></h3>
+        <div class="cantidad-control">
+            <button class="menos">-</button>
+            <span class="cantidad">1</span>
+            <button class="mas">+</button>
+        </div>
+        <h3>Total por producto: $<span class="precio-total">3,654.00</span></h3>
+        <button class="agregar-carrito">Agregar al carrito</button>
+    </div>
+</div>
 
   <div class="tarjetas__productos" data-id="Matinev" data-lab="Laboratorio B">
     <img src="./img/productos/matinev.png" alt="matinev">

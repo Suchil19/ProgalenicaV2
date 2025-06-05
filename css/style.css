@@ -568,3 +568,46 @@ main {
     }
   }
 
+/*** Agregar al carrito ***/
+.agregar-carrito {
+  background-color: #008CBA;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.agregar-carrito:hover {
+  transform: scale(1.1);
+}
+
+.carrito {
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 250px;
+}
+
+.carrito ul {
+  list-style-type: none;
+  padding: 0;
+}
+.cantidad-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.cantidad-control button {
+  background-color: #008CBA;
+  color: white;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.cantidad {
+  font-size: 18px;
+  font-weight: bold;
+}
