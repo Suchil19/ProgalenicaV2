@@ -11,12 +11,18 @@ body{
 
 :root {
   --blanco: #ffffff;
+  --color-letras-contenido: #26326f;
   --color-letras-blanco: #ffff;
   --color-letras-subtitulo: #e7e7e7;
   --background-color: #e8e8e8;
   --color-principal: #2f3240;
+  /*
   --color-secundario: #2cdcd6;
-  --color-hover: #2cdcd6;
+  */
+  /*--color-azul-progalenica: #26326f;*/
+  --color-secundario: #e94e1b;
+  --color-aqua: #2cdcd6;
+  --color-hover: #e94e1b;
   --color-secundario-2: #497c8d;
   --color-terciario: #e6e6e6;
   --font-body: 'Poppins', sans-serif;
@@ -69,7 +75,7 @@ a{
 }
 /*header*/
 .header{
-	background-color: #2f3240;
+	background-color: var(--blanco);
 	padding: 12px 0;
 	line-height: 1.5;
     position: fixed;
@@ -96,7 +102,7 @@ a{
 	font-size: 1.2rem;
     font-weight: 600;
 	text-transform: capitalize;
-	color: #ffffff;
+	color: var(--color-letras-contenido);
 	padding: 10px 0;
 	transition: all 0.5s ease;
 }
@@ -122,7 +128,7 @@ a{
 .nav-toggler span{
     height: 2px;
     width: 20px;
-    background-color: var(--color-principal);
+    background-color: var(--color-letras-contenido);
     display: block;
     margin:auto;
     position: relative;
@@ -330,7 +336,7 @@ a{
 }
 
 .tarjetas__productos span{
-  color: var(--color-secundario);
+  color: var(--color-aqua);
 }
 
 
