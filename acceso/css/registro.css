@@ -182,7 +182,7 @@
   }
   .form-inner form .pass-link a,
   .form-inner form .signup-link a{
-    color: #1a75ff;
+    color: var(--color-secundario);
     text-decoration: none;
   }
   .form-inner form .pass-link a:hover,
@@ -222,3 +222,70 @@
     font-weight: 500;
     cursor: pointer;
   }
+
+
+
+
+  /*** Form ***/
+  select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid var(--color-secundario);
+    background-color: var(--color-blanco);
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  select:focus {
+    outline: none;
+    border-color: var(--color-secundario);
+    box-shadow: 0 0 5px var(--color-secundario);
+  }
+  
+  option {
+    padding: 10px;
+  }
+  
+/*** Imagen para registro exitoso ***/
+  .image-container {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    padding: 2rem;
+}
+
+.image-container img {
+    width: 100%;
+    border-radius: 1rem;
+    height: auto;
+    display: block;
+}
+/*** Mensaje de error en el formulario ***/
+#mensajeError{
+  color: red; 
+  display: none;
+}
+
+#correoError{
+  color: red; display: none;
+}
+
+#error__pass{
+  color: red; 
+  display: none;
+}
+
+#success__pass{
+  color: green; 
+  display: none;} 
+
+#nombreError{
+  color: red; 
+  display: none;
+}
+
+#apellidoError{
+  color: red; 
+  display: none;
+}

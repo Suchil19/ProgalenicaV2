@@ -82,6 +82,11 @@
           <input type="submit" value="iniciar" onclick="window.location.href='../perfil-cliente/mi-espacio.html'">
         </div>
         <div class="signup-link">No eres miembro? <a href="">Registrate Ahora</a></div>
+
+        <div class="image-container">
+          <img src="https://www.artilugiogroup.com.mx/Progalenica/wp-content/uploads/2021/02/Lezomiv-Solucio%CC%81n-4mg-5ml-inyectableP-a.png" alt="Imagen responsiva">
+      </div>
+      
       </form>
 
 
@@ -89,33 +94,48 @@
 
         
         <div class="field">  
-          <input type="text" name="nombre" placeholder="Nombre" required>
+          <input type="text" name="nombre" id="nombre" placeholder="Nombre" required>
+          <span id="nombreError">Solo se permiten letras.</span>
         </div>
 
         <div class="field">
-          <input type="text" name="apellido_paterno" placeholder="Apellido Paterno" required>
+          <input type="text" name="apellido_paterno" id="apellido" placeholder="Apellido Paterno" required>
+          <span id="apellidoError">Solo se permiten letras.</span>
         </div>
+
         <div class="field">
           <input type="text" name="apellido_materno" placeholder="Apellido Materno">
         </div>
         <div class="field">
+          <input type="text" name="telefono" placeholder="Teléfono">
+        </div>
+        <div class="field">
           <select name="genero" id="">
-            <option value="" selected disabled >Selecciona</option>
+            <option value="" selected disabled aria-required="">Selecciona</option>
             <option value="Masculino">Masculino</option>
             <option value="Femenino">Femenino </option>
           </select>
         </div>
+
         <div class="field">
           <!--expresión regular-->
-          <input type="text" name="rfc" placeholder="RFC" required>
-        </div>
-        <div class="field">
-          <input type="password" id="password" placeholder="Contraseña" required>
-        </div>
-        <div class="field">
-          <input type="password"  placeholder="Confirma la contraseña" required>
+          <input type="text" name="rfc" id="campoValidacion" placeholder="RFC ... Ingresa solo letras y números">
+          <span id="mensajeError">Solo se permiten RFC válidos</span>
         </div>
 
+        <div class="field">
+          <input type="text" name="email" id="correo" placeholder="Escribe tu correo electronico">
+          <span id="correoError">Formato de correo inválido.</span>
+        </div>
+
+      <div class="field">
+        <input type="password" id="password" placeholder="Contraseña" required>
+      </div>
+      <div class="field">
+          <input type="password" id="confirmPassword" placeholder="Confirma la contraseña" required>
+      </div>
+      <span id="error__pass">Las contraseñas no coinciden.</span>
+      <span id="success__pass">Las contraseñas coinciden correctamente.</span>
         
 
         <div class="field btn">
