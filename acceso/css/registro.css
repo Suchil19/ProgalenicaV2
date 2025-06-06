@@ -2,7 +2,7 @@
 
 #hero {
 
-    background: linear-gradient(to bottom, #033f5f , #038cba3b), url("https://images.unsplash.com/photo-1651573090348-4ccf3924ef82?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") center no-repeat;
+    background: linear-gradient(to bottom, #e94f1bc9 , #e94f1b81), url("https://images.unsplash.com/photo-1651573090348-4ccf3924ef82?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") center no-repeat;
     background-size: cover;
     position: relative;
     top: 0;
@@ -40,7 +40,7 @@
 
 
 ::selection{
-    background: #1a75ff;
+    background: var(--color-secundario);
     color: #fff;
   }
   .wrapper{
@@ -110,8 +110,7 @@
     left: 0;
     z-index: 0;
     border-radius: 15px;
-    background: -webkit-linear-gradient(left,#003366,#004080,#0059b3
-  , #0073e6);
+    background: -webkit-linear-gradient(left,#e94f1bd5,#e94f1bbb,#e94f1b,#e94f1b);
     transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
   }
   input[type="radio"]{
@@ -202,8 +201,7 @@
     width: 300%;
     position: absolute;
     left: -100%;
-    background: -webkit-linear-gradient(right,#003366,#004080,#0059b3
-  , #0073e6);
+    background: -webkit-linear-gradient(left,#e94f1bd5,#e94f1bbb,#e94f1b,#e94f1b);
     border-radius: 15px;
     transition: all 0.4s ease;;
   }
