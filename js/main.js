@@ -39,3 +39,29 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 // Carrito 
+
+
+//Producto ZOOM
+
+document.getElementById("product-image").addEventListener("click", function() {
+  this.classList.toggle("zoomed");
+});
+
+
+// Agregar productos
+function increaseQuantity() {
+  let qty = document.getElementById("quantity");
+  qty.value = parseInt(qty.value) + 1;
+}
+
+function decreaseQuantity() {
+  let qty = document.getElementById("quantity");
+  if (qty.value > 1) {
+      qty.value = parseInt(qty.value) - 1;
+  }
+}
+
+function agregarAlCarrito() {
+  let cantidad = document.getElementById("quantity") ? document.getElementById("quantity").value : 1;
+  alert(`Se han agregado ${cantidad} piezas al carrito.`);
+}

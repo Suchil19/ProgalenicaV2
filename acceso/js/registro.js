@@ -106,3 +106,25 @@ document.getElementById("correo").addEventListener("input", function () {
 
 
 // boton submit 
+
+
+
+// Reditreccionamiento 
+
+document.getElementById("registroForm").addEventListener("submit", function(event) {
+  event.preventDefault(); // Evita el envío predeterminado
+
+  fetch("https://progalenica-back.onrender.com/progalenica/usuarios/clientes/", {
+      method: "POST",
+      body: new FormData(this)
+  })
+  .then(response => {
+      if (response.ok) {
+          // ✅ Si el POST es exitoso, redirigir a la página local
+          window.location.href = "../acceso/registro-exitoso.html"; // Cambia esto por la página local deseada
+      } else {
+          alert("Error al enviar los datos. Intenta nuevamente.");
+      }
+  })
+  .catch(() => alert("No se pudo conectar con el servidor."));
+});

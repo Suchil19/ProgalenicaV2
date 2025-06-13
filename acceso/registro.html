@@ -79,9 +79,9 @@
         <div class="field btn">
           <div class="btn-layer"></div>
           <!--Quitar el onclick-->
-          <input type="submit" value="iniciar" onclick="window.location.href='../perfil-cliente/mi-espacio.html'">
+          <input type="submit" value="iniciar" onclick="window.location.href='#'">
         </div>
-        <div class="signup-link">No eres miembro? <a href="">Registrate Ahora</a></div>
+        <div class="signup-link">No eres miembro? <a href="#">Registrate Ahora</a></div>
 
         <div class="image-container">
           <img src="https://www.artilugiogroup.com.mx/Progalenica/wp-content/uploads/2021/02/Lezomiv-Solucio%CC%81n-4mg-5ml-inyectableP-a.png" alt="Imagen responsiva">
@@ -90,7 +90,7 @@
       </form>
 
 
-      <form action="https://progalenica-back.onrender.com/progalenica/productos" method="post" class="signup">
+      <form action="https://progalenica-back.onrender.com/progalenica/usuarios/clientes/" method="post" class="signup">
 
         
         <div class="field">  
@@ -129,7 +129,7 @@
         </div>
 
       <div class="field">
-        <input type="password" id="password" placeholder="Contraseña" required>
+        <input type="password" name="password" id="password" placeholder="Contraseña" required>
       </div>
       <div class="field">
           <input type="password" id="confirmPassword" placeholder="Confirma la contraseña" required>
@@ -140,9 +140,13 @@
 
         <div class="field btn">
           <div class="btn-layer"></div>
-          <input type="submit" value="registrate">
+          <input type="submit" value="registrate" onclick="window.location.href='../acceso/registro-exitoso.html'" >
         </div>
+        <p id="message"></p>
       </form>
+
+
+      
     </div>
   </div>
 </div>

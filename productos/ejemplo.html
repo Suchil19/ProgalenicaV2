@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Registro | Progalenica</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poetsen+One&family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="./css/producto.css">
+  
+</head>
+<body ondragstart="return false" onselectstart="return false" oncontextmenu="return false">
+  <div id="preloader"></div>
+
+ <header class="header">
+    <div class="container">
+        <div class="row align-items-center justify-content-between">
+            <div class="logo">
+               <a href="#"><!--Progalenica--><img class="logo" src="../img/logo/logo-progalenica.png"></a>
+               
+            </div>
+            <button type="button" class="nav-toggler">
+               <span></span>
+            </button>
+            <nav class="nav">
+               <ul>
+                  <li><a href="../index.html" class="active">Inicio</a></li>
+                  <li><a href="../acceso/registro.html">Ingresa | Registrate</a></li>
+                  <li><a href="../perfil-cliente/mi-espacio.html">Perfil</a></li>
+               </ul>
+            </nav>
+        </div>
+    </div>
+ </header>
+
+
+
+
+
+
+<section id="hero">
+  <div class="hero-text">
+      <h1>Progalenica</h1>
+      
+  </div>
+</section>
+
+<div id="producto">
+    <div class="card__producto">
+        <div class="imagen__producto">
+            <img class="product-image" src="../img/productos/apthon.png" alt="Producto">
+        </div>
+        <div class="info__producto">
+            <h1>Nombre del Producto</h1>
+            <h2>Precio Unitario:$199.99</h2>
+            <h3>Cantidad Real:</strong> 50</h3>
+            <p class="barcode">Código de Barras: 123456789012</p>
+
+            <div class="descripcion__producto">
+                <h3>Descripción</h3>
+                <ul>
+                    <li>Presentación:Caja de 30 unidades</li>
+                    <li>Dosis: 500mg</li>
+                    <li>Vía de administración:</strong> Oral</li>
+                    <li><strong>Detalles:</strong> Producto recomendado para el tratamiento de X condición.</li>
+                </ul>
+            </div>
+            <div class="quantity-controls">
+                <button onclick="decreaseQuantity()"><i class="fas fa-minus"></i></button>
+                <input type="number" id="quantity" value="1" min="1">
+                <button onclick="increaseQuantity()"><i class="fas fa-plus"></i></button>
+            </div>
+    
+            <button class="boton-agregar" onclick="agregarAlCarrito()">
+                <i class="fas fa-shopping-cart"></i> Agregar al carrito
+            </button>
+        </div>
+
+      
+    </div>
+</div>
+
+
+
+ <section class="footer">
+    <div class="footer__row">
+      <div class="footer__col">
+        <h4>Info</h4>
+        <ul class="links">
+          <li><a href="#">Acerca de</a></li>
+          <li><a href="#">Contacto</a></li>
+          <li><a href="#">Servicios</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Explora</h4>
+        <ul class="links">
+          <li><a href="#">Descripción 01</a></li>
+          <li><a href="#">Descripción 02</a></li>
+          <li><a href="#">Descripción 03</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Legal</h4>
+        <ul class="links">
+          <li><a href="#">Aviso de Privacidad</a></li>
+          <li><a href="#">Términos y Condiciones</a></li>
+          <li><a href="#">Descripción 03</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Sobre Nosotros</h4>
+        <p>
+          Subscribe to our newsletter for a weekly dose
+          of news, updates, helpful tips, and
+          exclusive offers.
+        </p>
+        <!--form action="#">
+          <input type="text" placeholder="Your email" required>
+          <button type="submit">SUBSCRIBE</button>
+        </form-->
+        <div class="icons">
+          <i class="fa-brands fa-facebook-f"></i>
+          <i class="fa-brands fa-x"></i>
+          <i class="fa-brands fa-linkedin"></i>
+          <i class="fa-brands fa-tiktok"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+  <!--script src="../js/buscador.js"></script-->
+<script src="../js/main.js"></script>
+<script src="./js/registro.js"></script>
+
+</body>
+</html>
