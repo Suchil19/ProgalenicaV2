@@ -12,6 +12,7 @@ body{
 :root {
   --blanco: #ffffff;
   --blanco-componentes: #fff;
+  --azul-componentes: #26326f;
   --color-letras-contenido: #26326f;
   --color-letras-blanco: #ffff;
   --color-letras-subtitulo: #e7e7e7;
@@ -81,7 +82,7 @@ a{
 	line-height: 1.5;
     position: fixed;
     width: 100%;
-    z-index: 99;
+    z-index: 999;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
