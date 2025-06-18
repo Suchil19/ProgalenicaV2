@@ -65,3 +65,5 @@ function agregarAlCarrito() {
   let cantidad = document.getElementById("quantity") ? document.getElementById("quantity").value : 1;
   alert(`Se han agregado ${cantidad} piezas al carrito.`);
 }
+
+// Agregar productos
