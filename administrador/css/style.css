@@ -132,6 +132,7 @@
 .image-container img {
     width: 100%;
     border-radius: 1rem;
+    border: solid #fff 5px;
     height: auto;
     display: block;
 }
