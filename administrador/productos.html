@@ -12,6 +12,7 @@
   href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/agregar-prducto.css">
   
 </head>
 <body ondragstart="return false" onselectstart="return false" oncontextmenu="return false">
@@ -40,7 +41,7 @@
 
 
 
- <aside class="sidebar">
+ <!--aside class="sidebar">
     <div class="sidebar-header">
       <img src="images/logo.png" alt="logo" />
       <h2>Progalenica</h2>
@@ -55,33 +56,28 @@
           <span class="material-symbols-outlined"> dashboard </span>Panel</a>
       </li>
       <li>
-        <a href="#"><span class="material-symbols-outlined"> overview </span>Reportes</a>
-      </li>
 
-      <li>
-        <a href="#"><span class="material-symbols-outlined"> monitoring </span>Estadisticas</a>
-      </li>
       <h4>
         <span>Productos</span>
         <div class="menu-separator"></div>
       </h4>
       <li>
-        <a href="./productos.html"><span class="material-symbols-outlined"> <span class="material-symbols-outlined">
+        <a href="./agregar-producto.html"><span class="material-symbols-outlined"> <span class="material-symbols-outlined">
             add_circle
             </span></span>Agregar Producto</a>
       </li>
       <li>
-        <a href="#"><span class="material-symbols-outlined"> groups </span>Usuarios</a>
+        <a href="#"><span class="material-symbols-outlined"> groups </span>Opción 01</a>
       </li>
       <li>
-        <a href="#"><span class="material-symbols-outlined"> move_up </span>Productos</a>
+        <a href="#"><span class="material-symbols-outlined"> move_up </span>Opción 02</a>
       </li>
       <li>
-        <a href="#"><span class="material-symbols-outlined"> flag </span>Laboratorios</a>
+        <a href="#"><span class="material-symbols-outlined"> flag </span>Opción 03</a>
       </li>
       <li>
         <a href="#"><span class="material-symbols-outlined">
-            notifications_active </span>Clientes</a>
+            notifications_active </span>Notificaciones</a>
       </li>
       <h4>
         <span>Cuenta</span>
@@ -101,24 +97,86 @@
         </div>
       </div>
     </div>
-  </aside>
+  </aside-->
 
 <section id="hero">
   <div class="hero-text">
       <h1>Progalenica</h1>
-      <p>Registro Éxitoso</p>
+      <p>Agrega Productos</p>
   </div>
 </section>
 
 
+<!--Dashboard-->
 
-
-<div class="image-container">
-    <img src="https://images.unsplash.com/photo-1519834785169-98be25ec3f84?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Imagen responsiva">
+<div class="tarjeta__dashboard ">
+  <h2>Lista de Productos</h2>
+  <div class="top-actions">
+    <div class="search-box">
+      <input type="text" placeholder="Buscar producto..." >
+    </div>
+    <a href="./agregar-producto.html"><button class="add-button">
+      <span class="material-symbols-outlined">
+        add_circle
+        </span>
+      Agregar producto
+    </button></a>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Presentación</th>
+        <th>Cantidad</th>
+        <th>Precio</th>
+        <th>Editar</th>
+        <th>Borrar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="Nombre">Apthon</td>
+        <td data-label="Presentación">60 tabletas</td>
+        <td data-label="Cantidad">20</td>
+        <td data-label="Precio">$3654.00</td>
+        <td data-label="Editar"><span class="material-symbols-outlined">
+          edit
+          </span></td>
+        <td data-label="Borrar"><span class="material-symbols-outlined">
+            delete
+        </span></td>
+      </tr>
+      <tr>
+        <td data-label="Nombre">Apthon</td>
+        <td data-label="Presentación">30 tabletas</td>
+        <td data-label="Cantidad">20</td>
+        <td data-label="Precio">$3654.00</td>
+        <td data-label="Editar"><span class="material-symbols-outlined">
+          edit
+          </span>
+        </td>
+        <td data-label="Borrar"><span class="material-symbols-outlined">
+            delete
+        </span>
+        </td>
+      </tr>
+      <tr>
+        <td data-label="Nombre">Apthon</td>
+        <td data-label="Presentación">30 tabletas</td>
+        <td data-label="Cantidad">20</td>
+        <td data-label="Precio">$3654.00</td>
+        <td data-label="Editar"><span class="material-symbols-outlined">
+          edit
+          </span>
+        </td>
+        <td data-label="Borrar"><span class="material-symbols-outlined">
+            delete
+        </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
-
-
-
 
 
  <section class="footer">

@@ -1,0 +1,237 @@
+/*** Banner ****/
+
+#hero {
+
+    background: linear-gradient(to bottom, #e94f1bc9 , #e94f1b81), url("https://images.unsplash.com/photo-1655913197740-b018b8c96159?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") center no-repeat;
+    background-size: cover;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    height: 500px;
+    width: 100%;
+    border-radius: 0 0 200px 0px;
+  }
+  
+  
+  #hero .hero-text {
+    position: absolute;
+    top: 45%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    color: var(--blanco);
+    width: 90%;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  
+  #hero .hero-text p {
+    line-height: 1.5em;
+    font-weight: 300;
+    font-size: 1.2rem;
+    padding: 1rem;
+  }
+  
+
+
+
+
+
+
+
+
+/** Dashboard **/
+
+.tarjeta__dashboard {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  width: 95%;
+  margin: 2rem auto;
+  padding: 2rem;
+}
+
+.tarjeta__dashboard h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 1.2rem;
+}
+
+.top-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.search-box input {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 250px;
+  font-size: 1rem;
+}
+
+.add-button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.add-button .material-icons {
+  font-size: 1.2rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background: #4a90e2;
+  color: #fff;
+}
+
+th, td {
+  padding: 14px 18px;
+  text-align: left;
+  cursor: pointer;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f8f9fb;
+}
+
+tbody tr:hover {
+  background-color: #eef3f9;
+}
+
+th {
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+td {
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.edit-icon {
+  color: #4a90e2;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.edit-icon:hover {
+  transform: scale(1.2);
+}
+
+@media screen and (max-width: 768px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tbody tr {
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1rem;
+    background: #fff;
+  }
+
+  td {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    font-size: 0.95rem;
+  }
+
+  td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    color: #4a90e2;
+  }
+
+  .edit-icon {
+    margin-left: auto;
+  }
+}
+
+
+
+
+
+/*** Formulario ***/
+.form-container {
+  max-width: 600px;
+  width: 95%;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  margin: 2rem auto;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-top: 1rem;
+  color: #555;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 0.6rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.group-inline {
+  display: flex;
+  gap: 1rem;
+}
+
+.group-inline > div {
+  flex: 1;
+}
+
+button {
+  margin-top: 2rem;
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #357abd;
+}
