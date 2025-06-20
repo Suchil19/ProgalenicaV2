@@ -220,7 +220,7 @@ input, textarea, select {
   flex: 1;
 }
 
-button {
+.form-container button {
   margin-top: 2rem;
   width: 100%;
   padding: 0.8rem;
@@ -232,6 +232,6 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.form-container button:hover {
   background-color: #357abd;
 }

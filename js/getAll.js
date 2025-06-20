@@ -1,5 +1,5 @@
 // Cambia la URL por la de tu backend si es necesario
-const API_URL = 'http://localhost:3002/progalenica/productos/';
+const API_URL = 'https://progalenica-back.onrender.com/progalenica/productos/';
 
 async function cargarProductos() {
   try {

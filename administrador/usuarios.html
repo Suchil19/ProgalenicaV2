@@ -12,6 +12,7 @@
   href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/usuarios.css">
   
 </head>
 <body ondragstart="return false" onselectstart="return false" oncontextmenu="return false">
@@ -40,7 +41,7 @@
 
 
 
- <aside class="sidebar">
+ <!--aside class="sidebar">
     <div class="sidebar-header">
       <img src="images/logo.png" alt="logo" />
       <h2>Progalenica</h2>
@@ -66,17 +67,15 @@
         <div class="menu-separator"></div>
       </h4>
       <li>
-
         <a href="./productos.html"><span class="material-symbols-outlined"> <span class="material-symbols-outlined">
             add_circle
-            </span></span>Gestionar Productos</a>
+            </span></span>Agregar Producto</a>
       </li>
       <li>
-        <a href="./usuarios.html"><span class="material-symbols-outlined"> groups </span>Usuarios</a>
-
+        <a href="#"><span class="material-symbols-outlined"> groups </span>Usuarios</a>
       </li>
       <li>
-        <a href="./productos.html"><span class="material-symbols-outlined"> move_up </span>Productos</a>
+        <a href="#"><span class="material-symbols-outlined"> move_up </span>Productos</a>
       </li>
       <li>
         <a href="#"><span class="material-symbols-outlined"> flag </span>Laboratorios</a>
@@ -94,7 +93,7 @@
       </li>
    
     </ul>
-    <div class="cuenta__usuario">
+    <div class="user-account">
       <div class="perfil__usuario">
         <img src="https://images.unsplash.com/photo-1697131956380-b22437266e78?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Profile Image" />
         <div class="user-detail">
@@ -103,22 +102,57 @@
         </div>
       </div>
     </div>
-  </aside>
+  </aside-->
 
 <section id="hero">
   <div class="hero-text">
       <h1>Progalenica</h1>
-      <p>Registro Éxitoso</p>
+      <p>Usuarios</p>
   </div>
 </section>
 
 
 
 
-<div class="image-container">
-    <img src="https://images.unsplash.com/photo-1519834785169-98be25ec3f84?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Imagen responsiva">
-</div>
-
+<div class="contenedor__usuarios">
+    <h2>Usuarios Registrados</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Correo</th>
+          <th>Rol</th>
+          <th>Borrar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="Nombre">Luis Suchil</td>
+          <td data-label="Correo">luis@isejemplo.com</td>
+          <td data-label="Rol">Administrador</td>
+          <td data-label="Borrar"><span class="material-symbols-outlined">
+            delete
+            </span></td>
+        </tr>
+        <tr>
+          <td data-label="Nombre">Carlos Ruiz</td>
+          <td data-label="Correo">carlos@ejemplo.com</td>
+          <td data-label="Rol">Cliente</td>
+          <td data-label="Borrar"><span class="material-symbols-outlined">
+            delete
+            </span></td>
+        </tr>
+        <tr>
+          <td data-label="Nombre">Mariana Soto</td>
+          <td data-label="Correo">mariana@ejemplo.com</td>
+          <td data-label="Rol">Vendedor</td>
+          <td data-label="Borrar"><span class="material-symbols-outlined">
+            delete
+            </span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
 
 

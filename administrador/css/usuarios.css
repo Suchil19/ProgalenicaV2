@@ -1,0 +1,119 @@
+/*** Banner ****/
+
+#hero {
+
+    background: linear-gradient(to bottom, #e94f1bc9 , #e94f1b81), url("https://images.unsplash.com/photo-1549732565-d673b928da7f?q=80&w=1738&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") center no-repeat;
+    background-size: cover;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    height: 500px;
+    width: 100%;
+    border-radius: 0 0 200px 0px;
+  }
+  
+  
+  #hero .hero-text {
+    position: absolute;
+    top: 45%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    color: var(--blanco);
+    width: 90%;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  
+  #hero .hero-text p {
+    line-height: 1.5em;
+    font-weight: 300;
+    font-size: 1.2rem;
+    padding: 1rem;
+  }
+  
+
+
+
+
+.contenedor__usuarios {
+    max-width: 1000px;
+    width: 95%;
+    margin: 2rem auto;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #333;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  thead {
+    background-color: var(--color-secundario);
+    color: #fff;
+  }
+
+  th, td {
+    padding: 12px 16px;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: #f0f2f5;
+  }
+
+  tbody tr:hover {
+    background-color: #e4eaf2;
+  }
+
+  .delete-icon {
+    color: #e53935;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+
+  .delete-icon:hover {
+    transform: scale(1.2);
+  }
+
+  @media (max-width: 768px) {
+    table, thead, tbody, th, td, tr {
+      display: block;
+    }
+
+    thead {
+      display: none;
+    }
+
+    tbody tr {
+      background: #fff;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 1rem;
+    }
+
+    td {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+    }
+
+    td::before {
+      content: attr(data-label);
+      font-weight: bold;
+      color: #007bff;
+    }
+  }
