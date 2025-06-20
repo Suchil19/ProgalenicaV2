@@ -90,19 +90,15 @@
       </form>
 
 
-      <form action="https://progalenica-back.onrender.com/progalenica/usuarios/clientes/" method="post" class="signup">
-
-        
+      <form id="registroForm" class="signup">
         <div class="field">  
           <input type="text" name="nombre" id="nombre" placeholder="Nombre" required>
           <span id="nombreError">Solo se permiten letras.</span>
         </div>
-
         <div class="field">
           <input type="text" name="apellido_paterno" id="apellido" placeholder="Apellido Paterno" required>
           <span id="apellidoError">Solo se permiten letras.</span>
         </div>
-
         <div class="field">
           <input type="text" name="apellido_materno" placeholder="Apellido Materno">
         </div>
@@ -116,18 +112,15 @@
             <option value="Femenino">Femenino </option>
           </select>
         </div>
-
         <div class="field">
           <!--expresión regular-->
           <input type="text" name="rfc" id="campoValidacion" placeholder="RFC ... Ingresa solo letras y números">
           <span id="mensajeError">Solo se permiten RFC válidos</span>
         </div>
-
         <div class="field">
           <input type="text" name="email" id="correo" placeholder="Escribe tu correo electronico">
           <span id="correoError">Formato de correo inválido.</span>
         </div>
-
       <div class="field">
         <input type="password" name="password" id="password" placeholder="Contraseña" required>
       </div>
@@ -136,11 +129,9 @@
       </div>
       <span id="error__pass">Las contraseñas no coinciden.</span>
       <span id="success__pass">Las contraseñas coinciden correctamente.</span>
-        
-
         <div class="field btn">
           <div class="btn-layer"></div>
-          <input type="submit" value="registrate" onclick="window.location.href='../acceso/registro-exitoso.html'" >
+          <input type="submit" value="registrate">
         </div>
         <p id="message"></p>
       </form>

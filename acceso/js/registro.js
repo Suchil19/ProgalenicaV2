@@ -111,20 +111,39 @@ document.getElementById("correo").addEventListener("input", function () {
 
 // Reditreccionamiento 
 
-document.getElementById("registroForm").addEventListener("submit", function(event) {
+document.getElementById("registroForm").addEventListener("submit", async function(event) {
   event.preventDefault(); // Evita el envío predeterminado
+  const formData = new FormData(this);
+  if ([...formData.entries()].length === 0) {
+    console.warn("El FormData está vacío. Verifica que los campos tengan el atributo 'name' y que el formulario tenga los campos correctamente definidos.");
+    return;
+  }
+  // Mostrar datos enviados
+  console.log("Datos enviados por el formulario:");
+  for (let [key, value] of formData.entries()) {
+    console.log(key + ':', value);
+  }
 
-  fetch("https://progalenica-back.onrender.com/progalenica/usuarios/clientes/", {
-      method: "POST",
-      body: new FormData(this)
-  })
-  .then(response => {
-      if (response.ok) {
-          // ✅ Si el POST es exitoso, redirigir a la página local
-          window.location.href = "../acceso/registro-exitoso.html"; // Cambia esto por la página local deseada
-      } else {
-          alert("Error al enviar los datos. Intenta nuevamente.");
+  // Enviar datos al backend
+  try {
+    const response = await fetch('/api/usuarios/registro', {
+      method: 'POST',
+      body: formData
+    });
+    const result = await response.json();
+    if (result.success) {
+      window.location.href = 'registro-exitoso.html';
+    } else {
+      // Mostrar mensaje de error y resaltar campo si es posible
+      let errorMsg = result.message || 'Error en el registro. Verifica los campos.';
+      alert(errorMsg);
+      if (result.field) {
+        const field = document.getElementsByName(result.field)[0];
+        if (field) field.classList.add('input-error');
       }
-  })
-  .catch(() => alert("No se pudo conectar con el servidor."));
+    }
+  } catch (error) {
+    alert('Error de conexión con el servidor.');
+    console.error(error);
+  }
 });

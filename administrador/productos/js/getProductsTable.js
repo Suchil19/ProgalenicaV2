@@ -1,6 +1,6 @@
 // Variables globales
 let productos = [];
-const API_URL = 'https://progalenica-back.onrender.com/progalenica/productos/';
+const API_URL = 'http://localhost:3002/progalenica/productos/';
 
 // Función para formatear precio como moneda
 const formatCurrency = (price) => {
@@ -38,20 +38,39 @@ const createProductRow = (producto) => {
 const renderProductsTable = (productosArr = productos) => {
     const tbody = document.querySelector('table tbody');
     tbody.innerHTML = '';
-    productosArr.forEach(producto => {
+    // Ordenar por laboratorio y luego por nombre
+    const productosOrdenados = [...productosArr].sort((a, b) => {
+        const labA = (a.laboratorio || '').toLowerCase();
+        const labB = (b.laboratorio || '').toLowerCase();
+        if (labA < labB) return -1;
+        if (labA > labB) return 1;
+        // Si el laboratorio es igual, ordenar por nombre
+        const nombreA = (a.nombre || '').toLowerCase();
+        const nombreB = (b.nombre || '').toLowerCase();
+        if (nombreA < nombreB) return -1;
+        if (nombreA > nombreB) return 1;
+        return 0;
+    });
+    productosOrdenados.forEach(producto => {
         const row = createProductRow(producto);
         tbody.appendChild(row);
     });
 };
 
-// // Función para filtrar productos
-// const filterProducts = (searchTerm) => {
-//     const filtered = productos.filter(producto => 
-//         producto.nombre.toLowerCase().includes(searchTerm.toLowerCase()) ||
-//         producto.presentacion.toLowerCase().includes(searchTerm.toLowerCase())
-//     );
-//     renderProductsTable(filtered);
-// };
+// Función para filtrar productos
+const filterProducts = (searchTerm) => {
+    const filtered = productos.filter(producto => {
+        const nombre = producto.nombre?.toLowerCase() || '';
+        const presentacion = producto.presentacion?.toLowerCase() || producto.descripcion?.presentacion?.toLowerCase() || '';
+        const laboratorio = producto.laboratorio?.toLowerCase() || '';
+        return (
+            nombre.includes(searchTerm.toLowerCase()) ||
+            presentacion.includes(searchTerm.toLowerCase()) ||
+            laboratorio.includes(searchTerm.toLowerCase())
+        );
+    });
+    renderProductsTable(filtered);
+};
 
 // Función para cargar todos los productos
 const getAllProducts = async () => {
