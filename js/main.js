@@ -51,3 +51,6 @@ function agregarAlCarrito() {
 
 // Hacer la función filterProducts disponible globalmente
 window.filterProducts = filterProducts;
+
+// buscar los productos en la vista productos en administrador
+
