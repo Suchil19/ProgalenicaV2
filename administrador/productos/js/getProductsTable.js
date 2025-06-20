@@ -26,11 +26,12 @@ const createProductRow = (producto) => {
             </a>
         </td>
         <td data-label="Borrar">
-            <span class="material-symbols-outlined" onclick="eliminarProducto(${id})">
+            <span class="material-symbols-outlined" onClick="eliminarProducto('${producto.id_producto || producto.id || producto._id}')" title="Eliminar producto">
                 delete
             </span>
         </td>
     `;
+    console.log('Producto:', producto.id_producto);
     return row;
 };
 
@@ -78,15 +79,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Placeholder para funciones de edición y eliminación
-const editarProducto = (id) => {
-    console.log('Editar producto:', id);
-    // Implementar lógica de edición
-};
-
 const eliminarProducto = (id) => {
+    if (!id) {
+        console.error('ID no proporcionado');
+        return;
+    }
+    
     if (confirm('¿Estás seguro de que deseas eliminar este producto?')) {
-        console.log('Eliminar producto:', id);
-        // Implementar lógica de eliminación
+        fetch(`${API_URL}${id}`, {
+            method: 'DELETE'
+        })
+        .then(response => response.json())
+        .then(result => {
+            if (result.success) {
+                alert('Producto eliminado correctamente');
+                getAllProducts();
+            } else {
+                alert(result.message || 'Error al eliminar el producto');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Error al eliminar el producto');
+        });
     }
 };
