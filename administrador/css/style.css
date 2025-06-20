@@ -124,7 +124,7 @@
     background: #fff;
     border-radius: 4px;
   }
-  .user-account {
+  .cuenta__usuario {
     margin-top: auto;
     padding: 12px 10px;
     margin-left: -10px;
@@ -153,23 +153,7 @@
     margin-left: 23px;
     white-space: nowrap;
   }
-  .sidebar:hover .user-account {
+  .sidebar:hover .cuenta__usuario {
     background: #fff;
     border-radius: 4px;
   }
-
-  /*** Imagen para registro exitoso ***/
-  .image-container {
-    width: 100%;
-    max-width: 600px;
-    margin: auto;
-    padding: 2rem;
-}
-
-.image-container img {
-    width: 100%;
-    border-radius: 1rem;
-    border: solid #fff 5px;
-    height: auto;
-    display: block;
-}
