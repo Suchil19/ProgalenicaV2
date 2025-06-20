@@ -1,7 +1,7 @@
 // ejemplo.js
 // Este script carga los detalles del producto usando el id de la URL
 
-const API_URL = 'https://progalenica-back.onrender.com/progalenica/productos'; // Ajusta si es necesario
+const API_URL = 'https://progalenica-back.onrender.com/progalenica/productos/'; // Ajusta si es necesario
 
 // Obtener el id del producto de la URL
 const params = new URLSearchParams(window.location.search);
