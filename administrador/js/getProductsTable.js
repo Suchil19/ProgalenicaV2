@@ -1,6 +1,6 @@
 // Variables globales
 let productos = [];
-const API_URL = 'https://progalenica-back.onrender.com/progalenica/productos';
+const API_URL = 'https://progalenica-back.onrender.com/progalenica/productos/';
 
 // Función para formatear precio como moneda
 const formatCurrency = (price) => {
