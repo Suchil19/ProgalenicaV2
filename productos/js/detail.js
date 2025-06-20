@@ -48,7 +48,7 @@ function renderProducto(producto) {
         </div>
         <div class="quantity-controls">
           <button onclick="decreaseQuantity()"><i class="fas fa-minus"></i></button>
-          <input type="number" id="quantity" value="1" min="1">
+          <input type="number" id="quantity" value="1" min="1" readonly>
           <button onclick="increaseQuantity()"><i class="fas fa-plus"></i></button>
         </div>
         <button class="boton-agregar" onclick="agregarAlCarrito()">
