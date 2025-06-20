@@ -1,8 +1,7 @@
 // Preloader
 $(window).on('load', function() {
 	$('#preloader').delay(100).fadeOut('slow',function(){$(this).remove();});
-  });
-
+});
 
 $(document).ready(function(){
 const navToggler = document.querySelector(".nav-toggler");
@@ -20,50 +19,35 @@ function navToggle() {
    }
 }}); 
 
-
-// Filtrar
-
+// Filtrar productos
 function filterProducts(laboratorio) {
+  console.log(`Filtrando por: ${laboratorio}`);
   const cards = document.querySelectorAll('.tarjetas__productos');
+  
   cards.forEach(card => {
-      card.style.display = (laboratorio === 'all' || card.getAttribute('data-lab') === laboratorio) ? 'block' : 'none';
+      if (laboratorio === 'all') {
+        card.style.display = 'block';
+      } else {
+        card.style.display = (card.getAttribute('data-lab') === laboratorio) ? 'block' : 'none';
+      }
   });
-}
-
-// Muestra todos los productos al cargar la página
-document.addEventListener("DOMContentLoaded", function() {
-  filterProducts('all');
-});
-
-
-
-
-// Carrito 
-
-
-//Producto ZOOM
-
-document.getElementById("product-image").addEventListener("click", function() {
-  this.classList.toggle("zoomed");
-});
-
-
-// Agregar productos
-function increaseQuantity() {
-  let qty = document.getElementById("quantity");
-  qty.value = parseInt(qty.value) + 1;
-}
-
-function decreaseQuantity() {
-  let qty = document.getElementById("quantity");
-  if (qty.value > 1) {
-      qty.value = parseInt(qty.value) - 1;
+  
+  // Actualizar botones activos
+  const botones = document.querySelectorAll('.filtrar__laboratorios button');
+  botones.forEach(btn => btn.classList.remove('active'));
+  
+  // Encontrar y activar el botón correspondiente
+  const botonActivo = document.querySelector(`.filtrar__laboratorios button[onclick="filterProducts('${laboratorio}')"]`);
+  if (botonActivo) {
+    botonActivo.classList.add('active');
   }
 }
 
+// Agregar productos
 function agregarAlCarrito() {
   let cantidad = document.getElementById("quantity") ? document.getElementById("quantity").value : 1;
   alert(`Se han agregado ${cantidad} piezas al carrito.`);
 }
 
-// Agregar productos
+// Hacer la función filterProducts disponible globalmente
+window.filterProducts = filterProducts;

@@ -39,67 +39,33 @@
     </div>
  </header>
 
-
-
- <!--aside class="sidebar">
-    <div class="sidebar-header">
-      <img src="images/logo.png" alt="logo" />
-      <h2>Progalenica</h2>
-    </div>
-    <ul class="sidebar__links">
-      <h4>
-        <span>Menu Principal</span>
-        <div class="menu-separator"></div>
-      </h4>
-      <li>
-        <a href="#">
-          <span class="material-symbols-outlined"> dashboard </span>Panel</a>
-      </li>
-      <li>
-
-      <h4>
-        <span>Productos</span>
-        <div class="menu-separator"></div>
-      </h4>
-      <li>
-        <a href="./agregar-producto.html"><span class="material-symbols-outlined"> <span class="material-symbols-outlined">
-            add_circle
-            </span></span>Agregar Producto</a>
-      </li>
-      <li>
-        <a href="#"><span class="material-symbols-outlined"> groups </span>Opción 01</a>
-      </li>
-      <li>
-        <a href="#"><span class="material-symbols-outlined"> move_up </span>Opción 02</a>
-      </li>
-      <li>
-        <a href="#"><span class="material-symbols-outlined"> flag </span>Opción 03</a>
-      </li>
-      <li>
-        <a href="#"><span class="material-symbols-outlined">
-            notifications_active </span>Notificaciones</a>
-      </li>
-      <h4>
-        <span>Cuenta</span>
-        <div class="menu-separator"></div>
-      </h4>
-      <li>
-        <a href="#"><span class="material-symbols-outlined"> account_circle </span>Perfil</a>
-      </li>
-   
-    </ul>
-    <div class="cuenta__usuario">
-      <div class="perfil__usuario">
-        <img src="https://images.unsplash.com/photo-1697131956380-b22437266e78?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Profile Image" />
-        <div class="user-detail">
-          <h3>Raquel</h3>
-          <span>Arsmtrong</span>
-        </div>
-      </div>
-    </div>
   </aside-->
 
-<section id="hero">
+<section id="hero" style="position: relative;">
+  <a href="./perfil.html" style="
+      position: absolute;
+      top: 5rem;
+      left: 2rem;
+      background: rgba(255,255,255,0.85);
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      z-index: 10;
+      text-decoration: none;
+      color: #2d3a5a;
+      font-size: 2rem;
+      transition: background 0.2s;
+    "
+    onmouseover="this.style.background='#ffe0b2'"
+    onmouseout="this.style.background='rgba(255,255,255,0.85)'"
+    title="Regresar"
+  >
+    <span class="material-symbols-outlined">arrow_back</span>
+  </a>
   <div class="hero-text">
       <h1>Progalenica</h1>
       <p>Agrega Productos</p>
@@ -126,6 +92,7 @@
     <thead>
       <tr>
         <th>Nombre</th>
+        <th>Laboratorio</th>
         <th>Presentación</th>
         <th>Cantidad</th>
         <th>Precio</th>
@@ -134,46 +101,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td data-label="Nombre">Apthon</td>
-        <td data-label="Presentación">60 tabletas</td>
-        <td data-label="Cantidad">20</td>
-        <td data-label="Precio">$3654.00</td>
-        <td data-label="Editar"><span class="material-symbols-outlined">
-          edit
-          </span></td>
-        <td data-label="Borrar"><span class="material-symbols-outlined">
-            delete
-        </span></td>
-      </tr>
-      <tr>
-        <td data-label="Nombre">Apthon</td>
-        <td data-label="Presentación">30 tabletas</td>
-        <td data-label="Cantidad">20</td>
-        <td data-label="Precio">$3654.00</td>
-        <td data-label="Editar"><span class="material-symbols-outlined">
-          edit
-          </span>
-        </td>
-        <td data-label="Borrar"><span class="material-symbols-outlined">
-            delete
-        </span>
-        </td>
-      </tr>
-      <tr>
-        <td data-label="Nombre">Apthon</td>
-        <td data-label="Presentación">30 tabletas</td>
-        <td data-label="Cantidad">20</td>
-        <td data-label="Precio">$3654.00</td>
-        <td data-label="Editar"><span class="material-symbols-outlined">
-          edit
-          </span>
-        </td>
-        <td data-label="Borrar"><span class="material-symbols-outlined">
-            delete
-        </span>
-        </td>
-      </tr>
+      <!-- El contenido de la tabla se cargará dinámicamente -->
     </tbody>
   </table>
 </div>
@@ -228,7 +156,6 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
   <!--script src="../js/buscador.js"></script-->
 <script src="../js/main.js"></script>
-<script src="./js/registro.js"></script>
-
+<script src="./js/getProductsTable.js"></script>
 </body>
 </html>
