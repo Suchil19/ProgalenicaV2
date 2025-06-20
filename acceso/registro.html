@@ -96,17 +96,18 @@
           <span id="nombreError">Solo se permiten letras.</span>
         </div>
         <div class="field">
-          <input type="text" name="apellido_paterno" id="apellido" placeholder="Apellido Paterno" required>
+          <input type="text" name="apellido_paterno" id="apellido_paterno" placeholder="Apellido Paterno" required>
           <span id="apellidoError">Solo se permiten letras.</span>
         </div>
         <div class="field">
-          <input type="text" name="apellido_materno" placeholder="Apellido Materno">
+          <input type="text" name="apellido_materno" id="apellido_materno" placeholder="Apellido Materno">
         </div>
         <div class="field">
-          <input type="text" name="telefono" placeholder="Teléfono">
+          <input type="text" name="telefono" id="telefono" placeholder="Teléfono">
+          <span id="telefonoError">Formato de teléfono inválido.</span>
         </div>
         <div class="field">
-          <select name="genero" id="">
+          <select name="genero" id="genero">
             <option value="" selected disabled aria-required="">Selecciona</option>
             <option value="Masculino">Masculino</option>
             <option value="Femenino">Femenino </option>
@@ -114,7 +115,7 @@
         </div>
         <div class="field">
           <!--expresión regular-->
-          <input type="text" name="rfc" id="campoValidacion" placeholder="RFC ... Ingresa solo letras y números">
+          <input type="text" name="rfc" id="rfc" placeholder="RFC ... Ingresa solo letras y números">
           <span id="mensajeError">Solo se permiten RFC válidos</span>
         </div>
         <div class="field">

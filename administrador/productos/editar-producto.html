@@ -18,86 +18,25 @@
 <body ondragstart="return false" onselectstart="return false" oncontextmenu="return false">
   <div id="preloader"></div>
 
- <header class="header">
+  <header class="header">
     <div class="container">
         <div class="row align-items-center justify-content-between">
             <div class="logo">
-               <a href="../../index.html"><!--Progalenica--><img class="logo" src="../../img/logo/logo-progalenica.png"></a>
-               
+                <a href="../../index.html"><img class="logo" src="../../img/logo/logo-progalenica.png"></a>
+                
             </div>
             <button type="button" class="nav-toggler">
-               <span></span>
+                <span></span>
             </button>
             <nav class="nav">
-               <ul>
+                <ul>
                   <li><a href="../../index.html" class="active">Inicio</a></li>
-                  <!--li><a href="#">Ingresa | Registrate</a></li-->
                   <li><a href="../perfil.html">Perfil</a></li>
-               </ul>
+                </ul>
             </nav>
         </div>
     </div>
- </header>
-
-
-
- <!--aside class="sidebar">
-    <div class="sidebar-header">
-      <img src="images/logo.png" alt="logo" />
-      <h2>Progalenica</h2>
-    </div>
-    <ul class="sidebar__links">
-      <h4>
-        <span>Menu Principal</span>
-        <div class="menu-separator"></div>
-      </h4>
-      <li>
-        <a href="#">
-          <span class="material-symbols-outlined"> dashboard </span>Panel</a>
-      </li>
-      <li>
-
-      <h4>
-        <span>Productos</span>
-        <div class="menu-separator"></div>
-      </h4>
-      <li>
-        <a href="./agregar-producto.html"><span class="material-symbols-outlined"> <span class="material-symbols-outlined">
-            add_circle
-            </span></span>Agregar Producto</a>
-      </li>
-      <li>
-        <a href="#"><span class="material-symbols-outlined"> groups </span>Opción 01</a>
-      </li>
-      <li>
-        <a href="#"><span class="material-symbols-outlined"> move_up </span>Opción 02</a>
-      </li>
-      <li>
-        <a href="#"><span class="material-symbols-outlined"> flag </span>Opción 03</a>
-      </li>
-      <li>
-        <a href="#"><span class="material-symbols-outlined">
-            notifications_active </span>Notificaciones</a>
-      </li>
-      <h4>
-        <span>Cuenta</span>
-        <div class="menu-separator"></div>
-      </h4>
-      <li>
-        <a href="#"><span class="material-symbols-outlined"> account_circle </span>Perfil</a>
-      </li>
-   
-    </ul>
-    <div class="cuenta__usuario">
-      <div class="perfil__usuario">
-        <img src="https://images.unsplash.com/photo-1697131956380-b22437266e78?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Profile Image" />
-        <div class="user-detail">
-          <h3>Raquel</h3>
-          <span>Arsmtrong</span>
-        </div>
-      </div>
-    </div>
-  </aside-->
+  </header>
 
 <section id="hero">
   <div class="hero-text">
@@ -115,8 +54,13 @@
     <label for="nombre">Nombre <span style="color:red">*</span></label>
     <input type="text" id="nombre" name="nombre" required>
 
-    <label for="laboratorio">Laboratorio</span></label>
-    <input type="text" id="laboratorio" name="laboratorio">
+    <label for="laboratorio">Laboratorio<span style="color:red">*</span></label>
+    <select name="laboratorio" id="laboratorio" required>
+      <option value="" disabled selected>Selecciona un laboratorio</option>
+      <option value="Armstrong">Armstrong</option>
+      <option value="Hetero">Hetero</option>
+      <option value="Synthon">Synthon</option>
+    </select>
 
     <label for="precio_unitario">Precio unitario <span style="color:red">*</span></label>
     <input type="number" id="precio_unitario" name="precio_unitario" required min="0" step="0.01">
@@ -125,7 +69,7 @@
     <input type="number" id="cantidad_real" name="cantidad_real" required min="0" step="1">
 
     <label for="codigo_barras">Código de Barras</label>
-    <input type="text" id="codigo_barras" name="codigo_barras">
+    <input type="text" id="codigo_barras" name="codigo_barras" placeholder="Opcional...">
 
     <fieldset style="margin-top:1rem;">
       <legend>Descripción</legend>
@@ -149,105 +93,57 @@
     <button type="submit">Guardar producto</button>
   </form>
 </div>
-<script>
-document.getElementById('form-producto').addEventListener('submit', async function(e) {
-  e.preventDefault();
-  const defaultImg = 'https://res.cloudinary.com/dfvrlkbsv/image/upload/v1750375615/composicion-colorida-nuevo-producto-diseno-plano_23-2147927006_bmoj0g.avif';
-  const imagenInput = document.getElementById('imagen');
-  let imagen = '';
-  if (imagenInput.files && imagenInput.files[0]) {
-    // Aquí deberías subir la imagen y obtener la URL real, por ahora solo el nombre
-    imagen = imagenInput.files[0].name;
-  } else {
-    imagen = defaultImg;
-  }
 
-  const data = {
-    nombre: document.getElementById('nombre').value,
-    laboratorio: document.getElementById('laboratorio').value,
-    precio_unitario: parseFloat(document.getElementById('precio_unitario').value),
-    cantidad_real: parseInt(document.getElementById('cantidad_real').value),
-    codigo_barras: document.getElementById('codigo_barras').value,
-    descripcion: {
-      presentacion: document.getElementById('presentacion').value,
-      dosis: document.getElementById('dosis').value,
-      via_administracion: document.getElementById('via_administracion').value,
-      descripcion: document.getElementById('descripcion_detalle').value
-    },
-    imagen: imagen
-  };
-
-  try {
-    const response = await fetch('http://localhost:3002/progalenica/productos/', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data)
-    });
-    const result = await response.json();
-    if(result.success) {
-      alert('Producto guardado correctamente');
-      this.reset();
-    } else {
-      alert(result.message || 'Error al guardar el producto');
-    }
-  } catch (err) {
-    alert('Error de conexión o de servidor');
-  }
-});
-</script>
-
- <section class="footer">
-    <div class="footer__row">
-      <div class="footer__col">
-        <h4>Info</h4>
-        <ul class="links">
-          <li><a href="#">Acerca de</a></li>
-          <li><a href="#">Contacto</a></li>
-          <li><a href="#">Servicios</a></li>
-        </ul>
-      </div>
-      <div class="footer__col">
-        <h4>Explora</h4>
-        <ul class="links">
-          <li><a href="#">Descripción 01</a></li>
-          <li><a href="#">Descripción 02</a></li>
-          <li><a href="#">Descripción 03</a></li>
-        </ul>
-      </div>
-      <div class="footer__col">
-        <h4>Legal</h4>
-        <ul class="links">
-          <li><a href="#">Aviso de Privacidad</a></li>
-          <li><a href="#">Términos y Condiciones</a></li>
-          <li><a href="#">Descripción 03</a></li>
-        </ul>
-      </div>
-      <div class="footer__col">
-        <h4>Sobre Nosotros</h4>
-        <p>
-          Subscribe to our newsletter for a weekly dose
-          of news, updates, helpful tips, and
-          exclusive offers.
-        </p>
-        <!--form action="#">
-          <input type="text" placeholder="Your email" required>
-          <button type="submit">SUBSCRIBE</button>
-        </form-->
-        <div class="icons">
-          <i class="fa-brands fa-facebook-f"></i>
-          <i class="fa-brands fa-x"></i>
-          <i class="fa-brands fa-linkedin"></i>
-          <i class="fa-brands fa-tiktok"></i>
+  <section class="footer">
+      <div class="footer__row">
+        <div class="footer__col">
+          <h4>Info</h4>
+          <ul class="links">
+            <li><a href="#">Acerca de</a></li>
+            <li><a href="#">Contacto</a></li>
+            <li><a href="#">Servicios</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Explora</h4>
+          <ul class="links">
+            <li><a href="#">Descripción 01</a></li>
+            <li><a href="#">Descripción 02</a></li>
+            <li><a href="#">Descripción 03</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Legal</h4>
+          <ul class="links">
+            <li><a href="#">Aviso de Privacidad</a></li>
+            <li><a href="#">Términos y Condiciones</a></li>
+            <li><a href="#">Descripción 03</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Sobre Nosotros</h4>
+          <p>
+            Subscribe to our newsletter for a weekly dose
+            of news, updates, helpful tips, and
+            exclusive offers.
+          </p>
+          <!--form action="#">
+            <input type="text" placeholder="Your email" required>
+            <button type="submit">SUBSCRIBE</button>
+          </form-->
+          <div class="icons">
+            <i class="fa-brands fa-facebook-f"></i>
+            <i class="fa-brands fa-x"></i>
+            <i class="fa-brands fa-linkedin"></i>
+            <i class="fa-brands fa-tiktok"></i>
+          </div>
         </div>
       </div>
-    </div>
   </section>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
   <!--script src="../js/buscador.js"></script-->
 <script src="../../js/main.js"></script>
-<script src="../js/registro.js"></script>
+<script src="./js/editarProducto.js"></script>
 
 </body>
 </html>

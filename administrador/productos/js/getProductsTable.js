@@ -1,6 +1,6 @@
 // Variables globales
 let productos = [];
-const API_URL = 'http://localhost:3002/progalenica/productos/';
+const API_URL = 'https://progalenica-back.onrender.com/progalenica/productos/';
 
 // Función para formatear precio como moneda
 const formatCurrency = (price) => {
@@ -26,11 +26,12 @@ const createProductRow = (producto) => {
             </a>
         </td>
         <td data-label="Borrar">
-            <span class="material-symbols-outlined" onclick="eliminarProducto(${id})">
+            <span class="material-symbols-outlined" onClick="eliminarProducto('${producto.id_producto || producto.id || producto._id}')" title="Eliminar producto">
                 delete
             </span>
         </td>
     `;
+    console.log('Producto:', producto.id_producto);
     return row;
 };
 
@@ -38,39 +39,20 @@ const createProductRow = (producto) => {
 const renderProductsTable = (productosArr = productos) => {
     const tbody = document.querySelector('table tbody');
     tbody.innerHTML = '';
-    // Ordenar por laboratorio y luego por nombre
-    const productosOrdenados = [...productosArr].sort((a, b) => {
-        const labA = (a.laboratorio || '').toLowerCase();
-        const labB = (b.laboratorio || '').toLowerCase();
-        if (labA < labB) return -1;
-        if (labA > labB) return 1;
-        // Si el laboratorio es igual, ordenar por nombre
-        const nombreA = (a.nombre || '').toLowerCase();
-        const nombreB = (b.nombre || '').toLowerCase();
-        if (nombreA < nombreB) return -1;
-        if (nombreA > nombreB) return 1;
-        return 0;
-    });
-    productosOrdenados.forEach(producto => {
+    productosArr.forEach(producto => {
         const row = createProductRow(producto);
         tbody.appendChild(row);
     });
 };
 
-// Función para filtrar productos
-const filterProducts = (searchTerm) => {
-    const filtered = productos.filter(producto => {
-        const nombre = producto.nombre?.toLowerCase() || '';
-        const presentacion = producto.presentacion?.toLowerCase() || producto.descripcion?.presentacion?.toLowerCase() || '';
-        const laboratorio = producto.laboratorio?.toLowerCase() || '';
-        return (
-            nombre.includes(searchTerm.toLowerCase()) ||
-            presentacion.includes(searchTerm.toLowerCase()) ||
-            laboratorio.includes(searchTerm.toLowerCase())
-        );
-    });
-    renderProductsTable(filtered);
-};
+// // Función para filtrar productos
+// const filterProducts = (searchTerm) => {
+//     const filtered = productos.filter(producto => 
+//         producto.nombre.toLowerCase().includes(searchTerm.toLowerCase()) ||
+//         producto.presentacion.toLowerCase().includes(searchTerm.toLowerCase())
+//     );
+//     renderProductsTable(filtered);
+// };
 
 // Función para cargar todos los productos
 const getAllProducts = async () => {
@@ -97,15 +79,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Placeholder para funciones de edición y eliminación
-const editarProducto = (id) => {
-    console.log('Editar producto:', id);
-    // Implementar lógica de edición
-};
-
 const eliminarProducto = (id) => {
+    if (!id) {
+        console.error('ID no proporcionado');
+        return;
+    }
+    
     if (confirm('¿Estás seguro de que deseas eliminar este producto?')) {
-        console.log('Eliminar producto:', id);
-        // Implementar lógica de eliminación
+        fetch(`${API_URL}${id}`, {
+            method: 'DELETE'
+        })
+        .then(response => response.json())
+        .then(result => {
+            if (result.success) {
+                alert('Producto eliminado correctamente');
+                getAllProducts();
+            } else {
+                alert(result.message || 'Error al eliminar el producto');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Error al eliminar el producto');
+        });
     }
 };

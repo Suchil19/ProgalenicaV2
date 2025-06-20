@@ -33,7 +33,7 @@ document.getElementById("nombre").addEventListener("input", function () {
   }
 });
 
-document.getElementById("apellido").addEventListener("input", function () {
+document.getElementById("apellido_paterno").addEventListener("input", function () {
   let regex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/; // Solo letras y espacios
   let valor = this.value;
   let mensajeError = document.getElementById("apellidoError");
@@ -47,7 +47,7 @@ document.getElementById("apellido").addEventListener("input", function () {
 
 
 // Validación del RFC
-document.getElementById("campoValidacion").addEventListener("input", function () {
+document.getElementById("rfc").addEventListener("input", function () {
   let regex = /^[A-ZÑ&]{3,4}\d{6}[A-Z0-9]{3}$/; // Expresión regular para RFC con homoclave
   let valor = this.value.toUpperCase(); // Convertir a mayúsculas
   let mensajeError = document.getElementById("mensajeError");
@@ -58,6 +58,8 @@ document.getElementById("campoValidacion").addEventListener("input", function ()
       mensajeError.style.display = "none";
   }
 });
+
+
 
 // Validar contraseñas 
 
@@ -103,6 +105,19 @@ document.getElementById("correo").addEventListener("input", function () {
   }
 });
 
+// Validar teléfono
+document.querySelector("input[name='telefono']").addEventListener("input", function() {
+  let regex = /^[0-9]{10}$/; // 10 dígitos numéricos
+  let valor = this.value;
+  let telefonoError = document.getElementById("telefonoError"); // Asegúrate de agregar este span en tu HTML
+  
+  if (!regex.test(valor)) {
+    telefonoError.style.display = "inline";
+  } else {
+    telefonoError.style.display = "none";
+  }
+});
+
 
 
 // boton submit 
@@ -110,40 +125,38 @@ document.getElementById("correo").addEventListener("input", function () {
 
 
 // Reditreccionamiento 
-
 document.getElementById("registroForm").addEventListener("submit", async function(event) {
-  event.preventDefault(); // Evita el envío predeterminado
-  const formData = new FormData(this);
-  if ([...formData.entries()].length === 0) {
-    console.warn("El FormData está vacío. Verifica que los campos tengan el atributo 'name' y que el formulario tenga los campos correctamente definidos.");
-    return;
-  }
-  // Mostrar datos enviados
-  console.log("Datos enviados por el formulario:");
-  for (let [key, value] of formData.entries()) {
-    console.log(key + ':', value);
-  }
+  event.preventDefault();
+  
+  // Crear objeto con los datos
+  const userData = {
+    nombre: document.getElementById("nombre").value,
+    apellido_paterno: document.getElementById("apellido_paterno").value,
+    apellido_materno: document.querySelector("input[name='apellido_materno']").value,
+    telefono: document.querySelector("input[name='telefono']").value,
+    genero: document.querySelector("select[name='genero']").value,
+    rfc: document.getElementById("rfc").value,
+    email: document.getElementById("correo").value,
+    password: document.getElementById("password").value
+  };
 
-  // Enviar datos al backend
   try {
-    const response = await fetch('/api/usuarios/registro', {
+    const response = await fetch('https://progalenica-back.onrender.com/progalenica/usuarios/clientes', {
       method: 'POST',
-      body: formData
+      headers: {
+        'Content-Type': 'application/json', // ¡IMPORTANTE!
+      },
+      body: JSON.stringify(userData) // Convertir a JSON
     });
+
     const result = await response.json();
-    if (result.success) {
+    
+    if (response.ok) {
       window.location.href = 'registro-exitoso.html';
     } else {
-      // Mostrar mensaje de error y resaltar campo si es posible
-      let errorMsg = result.message || 'Error en el registro. Verifica los campos.';
-      alert(errorMsg);
-      if (result.field) {
-        const field = document.getElementsByName(result.field)[0];
-        if (field) field.classList.add('input-error');
-      }
+      alert(result.message || "Error en el registro");
     }
   } catch (error) {
-    alert('Error de conexión con el servidor.');
-    console.error(error);
+    alert("Error de conexión");
   }
 });
