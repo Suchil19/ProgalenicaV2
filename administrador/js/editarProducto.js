@@ -1,5 +1,5 @@
 // Script para precargar y actualizar producto
-const API_URL = 'http://localhost:3002/progalenica/productos/';
+const API_URL = 'https://progalenica-back.onrender.com/progalenica/productos';
 const defaultImg = 'https://res.cloudinary.com/dfvrlkbsv/image/upload/v1750375615/composicion-colorida-nuevo-producto-diseno-plano_23-2147927006_bmoj0g.avif';
 
 // Obtener el id del producto desde el query param
