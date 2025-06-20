@@ -704,6 +704,55 @@ main {
   margin-right: 10px;
 }
 
+/* Agregar estas reglas a tu CSS para mejorar el espaciado: */
+
+.tarjetas__productos p {
+  color: var(--color-letras-subtitulo);
+  font-size: 1rem;
+  padding: 1.5rem;
+  text-align: center;
+  /* Nuevas propiedades para controlar el texto largo: */
+  line-height: 1.4;
+  min-height: 80px; /* Altura mínima consistente */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Alternativa: Limitar líneas de texto */
+.tarjetas__productos p {
+  color: var(--color-letras-subtitulo);
+  font-size: 1rem;
+  padding: 1.5rem;
+  text-align: center;
+  line-height: 1.4;
+  max-height: 80px; /* Altura máxima */
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Máximo 3 líneas */
+  -webkit-box-orient: vertical;
+}
+
+/* Para hacer todas las tarjetas de la misma altura: */
+.tarjetas__productos {
+  background-color: var(--color-principal);
+  max-width: 350px;
+  width: 100%;
+  border-radius: 20px;
+  border: 3px solid var(--blanco);
+  color: var(--color-letras-blanco);
+  padding: 1rem;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  transition: ease-in .2s;
+  cursor: pointer;
+  /* Nueva propiedad para altura consistente: */
+  min-height: 400px; /* Ajusta según necesites */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 /*** Responsivo */
 @media screen and (max-width: 768px) {
   .card__producto{
@@ -727,3 +776,24 @@ main {
     justify-content: center;
 }
 }
+
+
+
+  /*** Imagen para registro exitoso ***/
+  .image-container {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    padding: 2rem;
+}
+
+.image-container img {
+    width: 100%;
+    border-radius: 1rem;
+    border: solid #fff 5px;
+    height: auto;
+    display: block;
+}
+
+
+/*** SIDE BAR ***/
