@@ -18,91 +18,26 @@
 <body ondragstart="return false" onselectstart="return false" oncontextmenu="return false">
   <div id="preloader"></div>
 
- <header class="header">
-    <div class="container">
-        <div class="row align-items-center justify-content-between">
-            <div class="logo">
-               <a href="../../index.html"><!--Progalenica--><img class="logo" src="../../img/logo/logo-progalenica.png"></a>
-               
-            </div>
-            <button type="button" class="nav-toggler">
-               <span></span>
-            </button>
-            <nav class="nav">
-               <ul>
-                  <li><a href="../../index.html" class="active">Inicio</a></li>
-                  <li><a href="#">Ingresa | Registrate</a></li>
-                  <li><a href="../perfil.html">Perfil</a></li>
-               </ul>
-            </nav>
-        </div>
-    </div>
- </header>
-
-
-
- <!--aside class="sidebar">
-    <div class="sidebar-header">
-      <img src="images/logo.png" alt="logo" />
-      <h2>Progalenica</h2>
-    </div>
-    <ul class="sidebar__links">
-      <h4>
-        <span>Menu Principal</span>
-        <div class="menu-separator"></div>
-      </h4>
-      <li>
-        <a href="#">
-          <span class="material-symbols-outlined"> dashboard </span>Panel</a>
-      </li>
-      <li>
-        <a href="#"><span class="material-symbols-outlined"> overview </span>Reportes</a>
-      </li>
-
-      <li>
-        <a href="#"><span class="material-symbols-outlined"> monitoring </span>Estadisticas</a>
-      </li>
-      <h4>
-        <span>Productos</span>
-        <div class="menu-separator"></div>
-      </h4>
-      <li>
-        <a href="./productos.html"><span class="material-symbols-outlined"> <span class="material-symbols-outlined">
-            add_circle
-            </span></span>Agregar Producto</a>
-      </li>
-      <li>
-        <a href="#"><span class="material-symbols-outlined"> groups </span>Usuarios</a>
-      </li>
-      <li>
-        <a href="#"><span class="material-symbols-outlined"> move_up </span>Productos</a>
-      </li>
-      <li>
-        <a href="#"><span class="material-symbols-outlined"> flag </span>Laboratorios</a>
-      </li>
-      <li>
-        <a href="#"><span class="material-symbols-outlined">
-            notifications_active </span>Clientes</a>
-      </li>
-      <h4>
-        <span>Cuenta</span>
-        <div class="menu-separator"></div>
-      </h4>
-      <li>
-        <a href="#"><span class="material-symbols-outlined"> account_circle </span>Perfil</a>
-      </li>
-   
-    </ul>
-    <div class="user-account">
-      <div class="perfil__usuario">
-        <img src="https://images.unsplash.com/photo-1697131956380-b22437266e78?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Profile Image" />
-        <div class="user-detail">
-          <h3>Raquel</h3>
-          <span>Arsmtrong</span>
-        </div>
+<header class="header">
+  <div class="container">
+      <div class="row align-items-center justify-content-between">
+          <div class="logo">
+              <a href="../../index.html"><!--Progalenica--><img class="logo" src="../../img/logo/logo-progalenica.png"></a>
+              
+          </div>
+          <button type="button" class="nav-toggler">
+              <span></span>
+          </button>
+          <nav class="nav">
+              <ul>
+                <li><a href="../../index.html" class="active">Inicio</a></li>
+                <li><a href="#">Ingresa | Registrate</a></li>
+                <li><a href="../perfil.html">Perfil</a></li>
+              </ul>
+          </nav>
       </div>
-    </div>
-  </aside-->
+  </div>
+</header>
 
 <section id="hero">
   <div class="hero-text">
@@ -116,43 +51,24 @@
 
 <div class="contenedor__usuarios">
     <h2>Usuarios Registrados</h2>
-    <table>
+    <div class="search-box" style="margin-bottom: 1rem;">
+        <input type="text" id="search-input" placeholder="Buscar usuarios...">
+    </div>
+    <table id="users-table">
       <thead>
         <tr>
           <th>Nombre</th>
           <th>Correo</th>
           <th>Rol</th>
+          <th>Editar</th>
           <th>Borrar</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td data-label="Nombre">Luis Suchil</td>
-          <td data-label="Correo">luis@isejemplo.com</td>
-          <td data-label="Rol">Administrador</td>
-          <td data-label="Borrar"><span class="material-symbols-outlined">
-            delete
-            </span></td>
-        </tr>
-        <tr>
-          <td data-label="Nombre">Carlos Ruiz</td>
-          <td data-label="Correo">carlos@ejemplo.com</td>
-          <td data-label="Rol">Cliente</td>
-          <td data-label="Borrar"><span class="material-symbols-outlined">
-            delete
-            </span></td>
-        </tr>
-        <tr>
-          <td data-label="Nombre">Mariana Soto</td>
-          <td data-label="Correo">mariana@ejemplo.com</td>
-          <td data-label="Rol">Vendedor</td>
-          <td data-label="Borrar"><span class="material-symbols-outlined">
-            delete
-            </span></td>
-        </tr>
+        <!-- El contenido se cargará dinámicamente -->
       </tbody>
     </table>
-  </div>
+</div>
 
 
 

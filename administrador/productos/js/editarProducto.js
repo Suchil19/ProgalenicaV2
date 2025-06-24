@@ -84,6 +84,7 @@ document.getElementById('form-producto').addEventListener('submit', async functi
     const result = await response.json();
     if(result.success) {
       alert('Producto actualizado correctamente');
+      window.location.href = './productos.html';
     } else {
       alert(result.message || 'Error al actualizar el producto');
     }
